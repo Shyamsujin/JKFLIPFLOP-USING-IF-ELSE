@@ -1,4 +1,7 @@
-# JKFLIPFLOP-USING-IF-ELSE
+## NAME:SHYAM SUJIN U
+## REG NO.212223040201
+
+# EXP 07-JKFLIPFLOP-USING-IF-ELSE
 
 **AIM:** 
 
@@ -33,16 +36,60 @@ By using three variable K-Map, we can get the simplified expression for next sta
 The maximum possible groupings of adjacent ones are already shown in the figure. Therefore, the simplified expression for next state Qt+1t+1 is Q(t+1)=JQ(t)′+K′Q(t)Q(t+1)=JQ(t)′+K′Q(t)
 
 **Procedure**
-
-/* write all the steps invloved */
-
+STEP 1:Type the program in Quartus software.
+STEP 2:Compile and run the program.
+STEP 3:Generate the RTL schematic and save the logic diagram.
+STEP 4:Create nodes for inputs and outputs to generate the timing diagram.
+STEP 5:For different input combinations generate the timing diagram
 **PROGRAM**
+```
+/*Program for logic gates and verify its truth table in quartus using Verilog programming.
 
-/* Program for flipflops and verify its truth table in quartus using Verilog programming. Developed by: RegisterNumber:
+module jkflipflop(q, qb,j,k,clock,reset);
+    input j,k,clock,reset;
+    output reg q, qb;
+	 
+always @ (posedge (clock))
+
+    begin 
+        if (!reset)
+            begin
+               q <= q;
+               qb <=qb;
+            end   
+        
+else
+   begin
+	   if(j==0 && k==0)
+		   begin
+			q<=q;
+			qb<=qb;
+			end
+		else if(j!=k)
+		   begin
+			q<=j;
+			qb<=k;
+			end
+		else if(j==1 && k==1)
+		    begin
+			 q<=~q;
+			 qb<=~qb;
+			 end
+	end
+end	
+endmodule
+
+Developed by:SHYAM SUJIN U
+RegisterNumber:212223040201
+```
 */
 
 **RTL LOGIC FOR FLIPFLOPS**
+![image](https://github.com/Shyamsujin/JKFLIPFLOP-USING-IF-ELSE/assets/144870449/404fdab3-ee86-4c5b-994c-f1135f988bb5)
 
 **TIMING DIGRAMS FOR FLIP FLOPS**
+![image](https://github.com/Shyamsujin/JKFLIPFLOP-USING-IF-ELSE/assets/144870449/cc3c8844-cfc4-474d-9413-f7c9c9f0768c)
 
-**RESULTS**
+**Result:**
+The output of JKFLIPFLOP-USING-IF-ELSE has been executed successfully.
+
